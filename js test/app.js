@@ -34,7 +34,7 @@ class Raton extends DispositivoEntrada{
     }
 
     toString(){
-        return this._idRaton +' '
+        return `Raton: ${this._idRaton}, Tipo Entrada: ${this._tipoEntrada}, Marca: ${this._marca}`
     }
 }
 
@@ -45,5 +45,45 @@ class Teclado extends DispositivoEntrada{
     
     static contadorTeclados = 0
 
-    constructor()
+    constructor(tipoEntrada, marca){
+        super(tipoEntrada, marca)
+        this._idTeclado = ++Teclado.contadorTeclados
+    }
+
+    toString(){
+        return `Teclado: ${this._idTeclado}, Tipo Entrada: ${this._tipoEntrada}, Marca: ${this._marca}`
+    }
+
+}
+
+let teclado = new Teclado('Fisico', 'Fnatic')
+console.log(teclado.toString())
+
+class Monitor{
+
+    static contadorMonitores = 0
+
+    constructor(marca, tamaño){
+        this._idMonitor = ++Monitor.contadorMonitores
+        this._marca = marca
+        this._tamaño = tamaño
+    }
+
+    toString(){
+        return `Monitor: ${this._idMonitor}, Marca: ${this._marca}, Tamaño: ${this._tamaño}`
+    }
+
+}
+
+let monitor = new Monitor('Samsung', 15)
+console.log(monitor.toString())
+
+class Computadora{
+
+    static contadorComputadoras = 0;
+
+    constructor(nombre) {
+        
+    }
+    
 }
