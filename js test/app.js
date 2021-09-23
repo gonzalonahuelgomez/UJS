@@ -116,7 +116,7 @@ class Orden{
         for(let computadora of this._computadoras){
             computadorasOrden += `\n${computadora}`
         }
-        console.log(`Orden: ${this._idOrden}, Computadoras: \n${computadora}`)
+        console.log(`Orden: ${this._idOrden}, Computadoras: \n${computadorasOrden}`)
     }
 
     toString(){
@@ -135,3 +135,5 @@ console.log(monitor.toString())
 let computadora = new Computadora('Lenovo', monitor, teclado, raton)
 console.log(computadora.toString())
 let orden = new Orden()
+orden.agregarComputadora(computadora)
+orden.mostrarOrden()
