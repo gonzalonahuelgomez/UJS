@@ -20,8 +20,6 @@ class DispositivoEntrada {
         this._marca = marca
     }
 }
-let disp = new DispositivoEntrada('Fisica','MSI')
-console.log(disp)
 
 class Raton extends DispositivoEntrada{    
     static contadorRatones = 0
@@ -36,11 +34,9 @@ class Raton extends DispositivoEntrada{
     }
 
     toString(){
-        return `Raton: ${this._idRaton}, Tipo Entrada: ${this._tipoEntrada}, Marca: ${this._marca}`
+        return `Raton: ID ${this._idRaton}, Tipo Entrada: ${this._tipoEntrada}, Marca: ${this._marca}`
     }
 }
-let raton = new Raton('Fisico', 'Fnatic')
-console.log(raton.toString())
 
 class Teclado extends DispositivoEntrada{    
     static contadorTeclados = 0
@@ -55,12 +51,10 @@ class Teclado extends DispositivoEntrada{
     }
     
     toString(){
-        return `Teclado: ${this._idTeclado}, Tipo Entrada: ${this._tipoEntrada}, Marca: ${this._marca}`
+        return `Teclado: ID ${this._idTeclado}, Tipo Entrada: ${this._tipoEntrada}, Marca: ${this._marca}`
     }
 
 }
-let teclado = new Teclado('Fisico', 'Fnatic')
-console.log(teclado.toString())
 
 class Monitor{
     static contadorMonitores = 0
@@ -76,17 +70,15 @@ class Monitor{
     }
 
     toString(){
-        return `Monitor: ${this._idMonitor}, Marca: ${this._marca}, Tamaño: ${this._tamaño}`
+        return `Monitor: ID ${this._idMonitor}, Marca: ${this._marca}, Tamaño: ${this._tamaño}`
     }
 
 }
-let monitor = new Monitor('Samsung', 15)
-console.log(monitor.toString())
 
 class Computadora{
     static contadorComputadoras = 0;
 
-    constructor(nombre, raton, teclado, monitor) {
+    constructor(nombre, monitor, teclado, raton) {
         this._idComputadora = ++Computadora.contadorComputadoras
         this._nombre = nombre
         this._monitor = monitor
@@ -99,11 +91,10 @@ class Computadora{
     }
 
     toString(){
-        return `Computadora: ${this._idComputadora}, ${this._nombre}, ${this._monitor}, ${this._teclado}, ${this._raton}`
+        return `Computadora: ID ${this._idComputadora} ${this._nombre}\n${this._monitor}\n${this._teclado}\n${this._raton}`
     }
 }
-let computadora = new Computadora('Lenovo', monitor, teclado, raton)
-console.log(computadora.toString())
+
 class Orden{
     static contadorOrdenes = 0
 
@@ -121,10 +112,26 @@ class Orden{
     }
 
     mostrarOrden(){
-
+        let computadorasOrden = '';
+        for(let computadora of this._computadoras){
+            computadorasOrden += `\n${computadora}`
+        }
+        console.log(`Orden: ${this._idOrden}, Computadoras: \n${computadora}`)
     }
 
     toString(){
 
     }
 }
+
+let disp = new DispositivoEntrada('Fisica','MSI')
+console.log(disp)
+let raton = new Raton('Fisico', 'Fnatic')
+console.log(raton.toString())
+let teclado = new Teclado('Fisico', 'Fnatic')
+console.log(teclado.toString())
+let monitor = new Monitor('Samsung', 15)
+console.log(monitor.toString())
+let computadora = new Computadora('Lenovo', monitor, teclado, raton)
+console.log(computadora.toString())
+let orden = new Orden()
