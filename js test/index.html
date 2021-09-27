@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tocando el DOM</title>
+    <link rel="stylesheet" href="/js test/styles.css">
 </head>
 <body>
-    <div id="mapa" style="height: 50vh;"></div>
+    <h1>Hola Mundo</h1>
+    <p class="redfont">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis dolor magni dignissimos, exercitationem magnam facilis quidem in illum sequi laboriosam quia velit doloribus officiis quam similique ratione voluptas suscipit neque.</p>
+    <p class="redfont">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis dolor magni dignissimos, exercitationem magnam facilis quidem in illum sequi laboriosam quia velit doloribus officiis quam similique ratione voluptas suscipit neque.</p>
+    
+    <form id='formulario'>
+        First Name: <input type="text" name="nombre" value="" placeholder="Inserte su nombre" required/>
+        <br>
+        Last Name: <input type="text" name="apellido" value="" placeholder="Inserte su apellido" required/>
+        <br>
+    </form>
+    <button onclick="show()">Show values</button>
+    <div id='muestra'></div>
     <script src="app.js"></script>
 </body>
 </html>

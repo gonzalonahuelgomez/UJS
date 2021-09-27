@@ -1,35 +1,17 @@
 'use strict'
 
-//errores
-let resultado = 10
-try {
-    x = 10    
-    throw 'x'
-} catch (error) {
-    console.log(error)
-    console.log(error.name)
-    console.log(error.message)
-} finally {
-    console.log('Prueba de errores con JS')
+document.getElementsByTagName('h1')[0].innerText = 'Cambiando desde la DOM'
+let fuenteroja = document.querySelectorAll('p.redfont')
+console.log(fuenteroja)
+
+function show() {
+    let form = document.forms['formulario']
+    let text = ''
+    for (let element of form) {
+        text += element.value + '  '
+    }
+    let nombre = form['nombre']
+    let apellido = form['apellido']
+    let text2 = nombre.value + ' ' + apellido.value
+    document.getElementById('muestra').innerHTML = `Muestra por for loop: ${text}<br>Muestra por ingreso a forms[]: ${text2}` 
 }
-console.log('se ejecuta')
-
-//arrow functions
-
-const a = () => console.log('Hola')
-a()
-
-const b = () => 'Hola desde b'
-console.log(b())
-
-const c = () => ({ nombre: 'Adrian'})
-console.log(c())
-
-const d = (mensaje) => console.log(mensaje)
-d('Buenardo')
-
-const e = (operando1, operando2) => { 
-    let resultado = operando1+operando2
-    return `Resultado: ${resultado}`
-}
-console.log(e(1,2))
