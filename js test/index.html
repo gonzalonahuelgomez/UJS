@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/js test/styles.css">
 </head>
 <body>
-    <h1>Hola Mundo</h1>
-    <p class="redfont">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis dolor magni dignissimos, exercitationem magnam facilis quidem in illum sequi laboriosam quia velit doloribus officiis quam similique ratione voluptas suscipit neque.</p>
+    <h1 onclick="this.innerHTML = 'Mira como te clickeo'">Hola Mundo</h1>
+    <p class="redfont" onclick="cambiarText(this)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis dolor magni dignissimos, exercitationem magnam facilis quidem in illum sequi laboriosam quia velit doloribus officiis quam similique ratione voluptas suscipit neque.</p>
     <p class="redfont">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis dolor magni dignissimos, exercitationem magnam facilis quidem in illum sequi laboriosam quia velit doloribus officiis quam similique ratione voluptas suscipit neque.</p>
     
     <form id='formulario'>
@@ -20,6 +20,13 @@
     </form>
     <button onclick="show()">Show values</button>
     <div id='muestra'></div>
+    <button onclick="overwrite()">Overwrite</button>
+    <div>
+        <img id="imagen" src="http://globalmentoring.com.mx/imagenes/javascript.png" alt="">
+    </div>
+    <button onclick="imageChange()">Image Change</button>
+    <button onclick="pColorChange()">Text Color Change</button>
+
     <script src="app.js"></script>
 </body>
 </html>
