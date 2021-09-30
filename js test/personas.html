@@ -16,16 +16,17 @@
 
     <div class='contenedor'>
         <div class='elemento'>
-            <ul id='personas'>
-                <li>Juan Perez</li>
+            <ul id='personas' style="list-style-position: inside;">
             </ul>
         </div>
     </div>
     <div class="contenedor">
-        <button onclick="agregarPersonas()">+</button>
+        <div style="text-align: center;">
+            <button style="cursor: pointer;" onclick="agregarPersonas()">+</button>
+        </div>
         <form>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-            <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="apellido" placeholder="Apellido">
         </form>
     </div>
 
