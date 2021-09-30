@@ -2,6 +2,7 @@
     color: red
 }
 
-.bluefont {
-    color: blue;
+a{
+    text-decoration: none;
+    color: black;
 }

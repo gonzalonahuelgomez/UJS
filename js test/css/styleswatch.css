@@ -16,6 +16,10 @@
 }
 
 #fecha{
-    letter-spacing: 10px;
+    letter-spacing: 8px;
     font-size: 10px;
+}
+
+.animar{
+    border: rgb(0, 0, 0) 2px solid;
 }
