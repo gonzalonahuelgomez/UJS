@@ -77,3 +77,28 @@ document.getElementById('eventListTest').addEventListener('blur', (e)=>{e.target
 function cambiar(e){
     e.target.style.background = "yellow"
 }
+
+
+function fibonacci (numero) {
+    let numeroFib = [];
+    numeroFib[0] = 0
+    numeroFib[1] = 1
+   
+    for(let i = 2; i < numero; i++) {
+        numeroFib[i] = numeroFib[i-2] + numeroFib[i-1]
+    }
+    
+    console.log(numeroFib)
+}
+let e = prompt("Ingrese numero de index para calcular fibonacci")
+fibonacci(e)
+const text = 'Hola Mundo'
+let letterAmount = {}
+for(let i= 0; i < text.length; i++){
+    let contador = text[i]
+    if(letterAmount[contador] == undefined)
+    { letterAmount[contador]=1
+    } else
+    letterAmount[contador] ++
+}
+console.log(letterAmount)
