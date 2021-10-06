@@ -47,7 +47,7 @@ const cargarIngresos = () => {
         `<div class="elemento limpiarEstilos">
             <div class="elemento_descripcion">${ingreso.descripcion}</div>
             <div class="derecha limpiarEstilos">
-                <div class="elemento_valor">${formatoMoneda(ingreso.valor)}</div>
+                <div class="elemento_valor">+ ${formatoMoneda(ingreso.valor)}</div>
                 <div class="elemento_eliminar">
                     <button class="elemento_eliminar--btn">
                         <ion-icon name="close-circle-outline" onclick="eliminarIngreso(${ingreso.idIngreso})")></ion-icon>
@@ -66,8 +66,8 @@ const cargarEgresos = () => {
         `<div class="elemento limpiarEstilos">
         <div class="elemento_descripcion">${egreso.descripcion}</div>
         <div class="derecha limpiarEstilos">
-            <div class="elemento_valor">${formatoMoneda(egreso.valor)}</div>
-            <div class="elemento_porcentaje">${formatoPorcentaje(egreso.valor/totalEgresos())}</div>
+            <div class="elemento_valor">- ${formatoMoneda(egreso.valor)}</div>
+            <div class="elemento_porcentaje"> ${formatoPorcentaje(egreso.valor/totalEgresos())}</div>
             <div class="elemento_eliminar">
                 <button class="elemento_eliminar--btn">
                     <ion-icon name="close-circle-outline" onclick="eliminarEgreso(${egreso.idEgreso})"></ion-icon>
@@ -79,16 +79,35 @@ const cargarEgresos = () => {
     document.getElementById('lista-egresos').innerHTML = egresosIndex
 }
 
-const eliminarIngreso = (id) => {
+let eliminarIngreso = (id) => {
     let eliminar = ingresos.findIndex(ingreso => ingreso.id === id)
     ingresos.splice(eliminar,1)
     cargarCabecero()
     cargarIngresos()
 }
 
-const eliminarEgreso = (id) => {
+let eliminarEgreso = (id) => {
     let eliminar = egresos.findIndex(egreso => egreso.id === id)
     egresos.splice(eliminar,1)
     cargarCabecero()
     cargarEgresos()
+}
+
+let agregarDato = () => {
+    let dato = document.forms["formulario"]
+    let tipo = dato['tipo'].value
+    let descripcion = dato['descripcion'].value
+    let valor = dato['valor'].value
+    if(descripcion !== '' && valor !== '') {
+        if(tipo === 'ingreso') {
+            ingresos.push( new Ingreso(descripcion, +valor))
+            cargarCabecero()
+            cargarIngresos()
+        }
+        else if(tipo === 'egreso') {
+            egresos.push( new Egreso(descripcion, +valor))
+            cargarCabecero()
+            cargarEgresos()
+        }
+    }
 }
